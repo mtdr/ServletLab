@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- * Created by FlipBook TP300LD on 19.09.2016.
+/**Создание первого сервлета
+ *
  */
 @WebServlet(name = "ShalomServlet", urlPatterns = {"/a/b/c", "/servlets/shalom"})
 public class ShalomServlet extends HttpServlet {
@@ -17,7 +17,8 @@ public class ShalomServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.setContentType("text/html");
+        request.setCharacterEncoding("charset=windows-1251");
+        response.setContentType("text/html; charset=windows-1251");
         PrintWriter out = response.getWriter();
         PrintWriter out1 = response.getWriter();
         out1.println("hello");
