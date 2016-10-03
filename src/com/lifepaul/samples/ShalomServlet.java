@@ -11,19 +11,33 @@ import java.io.PrintWriter;
 /**Создание первого сервлета
  *
  */
-@WebServlet(name = "ShalomServlet", urlPatterns = {"/a/b/c", "/servlets/shalom"})
+@WebServlet(name = "ShalomServlet", urlPatterns = {"/a/b/c", "/servlets/shalom", "/sh"})
 public class ShalomServlet extends HttpServlet {
 
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        request.setCharacterEncoding("charset=windows-1251");
+        String name = request.getParameter("firstName");
+        String surname = request.getParameter("secondName");
+        System.out.println(name + " " + surname);
         response.setContentType("text/html; charset=windows-1251");
         PrintWriter out = response.getWriter();
-        PrintWriter out1 = response.getWriter();
-        out1.println("hello");
-        out.println("<h1>Shalom</h1>");
+        out.println("<h3>Profile shalomnika</h3>");
+        out.println("Name: " + name + "<br>");
+        out.println("Surname: " + surname + "<br>");
         out.flush();
+        out.close();
+//        response.sendError(400);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("windows-1251");
+        String name = request.getParameter("firstName");
+        String surname = request.getParameter("secondName");
+        System.out.println(name + " " + surname);
+        response.setContentType("text/html; charset=windows-1251");
+        PrintWriter out = response.getWriter();
+        out.println("<h1>Post Shalom, " + name + " " + surname + "</h1>");
+        out.flush();
+        out.close();
 //        response.sendError(400);
     }
 }

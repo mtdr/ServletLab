@@ -50,7 +50,7 @@
 
 #logo img {
     width: 35px;
-    height: 50%;
+    height: 65%;
 }
 
 #search-row img{
@@ -285,7 +285,7 @@ ul {
     margin: 0;
     width: 700px;
     height: 190px;
-    padding: 25px;
+    padding: 15px;
 }
 
 #car-title {
@@ -300,6 +300,12 @@ ul {
     text-align: center;
     color: black;
     font-size: medium;
+    background-color: darkgray;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s ;
+    -ms-transition: transform 1s ;
+    -o-transition: transform 1s ;
+    transition: transform 1s ;
 }
 
 #price img{
@@ -358,11 +364,17 @@ ul {
 }
 
 #price p {
+    font-weight: bold;
     width:150px;
+}
+
+#price:hover {
+    background-color: dimgray;
 }
 
 #owner p {
     width: 150px;
+    font-weight: bold;
     font-size: large;
 }
 
@@ -371,6 +383,8 @@ ul {
     width: 290px;
     height: 60px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: large;
     background-color: green;
 
 }
