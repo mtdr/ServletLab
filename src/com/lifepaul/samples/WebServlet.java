@@ -11,12 +11,13 @@ import java.io.PrintWriter;
 public class WebServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            request.setCharacterEncoding("windows-1251");
+            request.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html; charset=windows-1251");
             String title = request.getParameter("title");
             String owner = request.getParameter("owner");
             String price = request.getParameter("price");
             String imgRep = request.getParameter("imgRep");
-            response.setContentType("text/html; charset=windows-1251");
+
             System.out.println(title+owner+price);
             PrintWriter out = response.getWriter();
 //            out.println("<h3>Profile " + title + "</h3>");
@@ -53,7 +54,7 @@ public class WebServlet extends HttpServlet {
                     "                </div>\n" +
                     "            </li>\n" +
                     "        </ul></div>\n" +
-                    "        <div id=\"search-row\"><form action=\"search\" method=\"GET\" accept-charset=\"windows-1251\"><input type=\"search\" placeholder=\"¬ведите название авто\" name=\"search-req\">\n" +
+                    "        <div id=\"search-row\"><form action=\"search\" method=\"GET\" name=\"search-req\" accept-charset=\"windows-1251\"><input type=\"search\" placeholder=\"¬ведите название авто\" name=\"search-req\">\n" +
                     "            <button class=\"search-button\"><a href=\"/\"><img src=\"./img/search.png\" alt=\"search\"></a></button> </form>\n" +
                     "        </div>\n" +
                     "        <div id=\"languages\">\n" +
